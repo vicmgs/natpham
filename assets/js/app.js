@@ -7,7 +7,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello React!</h1>
+        <h1>Hello Pham!</h1>
         <Link to="/login">Login</Link>
       </div>
     )
@@ -17,7 +17,7 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello Boring Login Page!</h1>
+        <h1>Nat Pham Sux...</h1>
         <Link to="/">Home</Link>
       </div>
     )
