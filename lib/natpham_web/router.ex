@@ -20,7 +20,9 @@ defmodule NatphamWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", NatphamWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", NatphamWeb do
+    pipe_through :api
+
+    post "/posts/new", PostController, :create
+  end
 end
