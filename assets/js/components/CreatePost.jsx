@@ -29,6 +29,7 @@ class CreatePost extends React.Component {
       }
     })
     .then(res => res.json())
+    .then(res => window.location.reload(true))
     .catch(error => console.error('Error:', error))
   }
 

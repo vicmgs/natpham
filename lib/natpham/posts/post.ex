@@ -19,6 +19,7 @@ defmodule Natpham.Posts.Post do
     changeset =
       post
       |> cast(attrs, [:title, :caption, :description, :link, :date])
+      |> unique_constraint(:title, message: "Title has already been taken")
       |> validate_required([:title, :caption, :link])
   end
 end

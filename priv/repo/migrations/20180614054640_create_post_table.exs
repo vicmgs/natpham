@@ -13,7 +13,7 @@ defmodule Natpham.Repo.Migrations.CreatePostTable do
       timestamps()
     end
 
-    create index(:posts, [:title])
+    create unique_index(:posts, [:title])
     create index(:posts, [:caption])
   end
 end
