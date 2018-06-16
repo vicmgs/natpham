@@ -13,14 +13,18 @@ defmodule NatphamWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", NatphamWeb do
+    pipe_through :api
+
+    get "/posts", PostController, :index
+    post "/posts/new", PostController, :create
+    delete "/posts/:id", PostController, :delete
+  end
+
   scope "/", NatphamWeb do
     pipe_through :browser # Use the default browser stack
 
     get "/*path", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", NatphamWeb do
-  #   pipe_through :api
-  # end
 end
