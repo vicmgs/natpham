@@ -1,4 +1,5 @@
 import React from "react"
+import Header from "./Header.jsx"
 
 class Home extends React.Component {
   constructor() {
@@ -18,16 +19,29 @@ class Home extends React.Component {
   }
 
   render() {
+    let posts = this.state.posts
+    if (this.state.posts.length % 3 == 1) {
+      posts.push({title: "empty1"})
+      posts.push({title: "empty2"})
+    } else if (this.state.posts.length % 3 == 2) {
+      posts.push({title: "empty1"})
+    }
+
     return (
-      <div>
-        {this.state.posts.map(post => (
-          <div key={post.title}>
-            <h1>{post.title}</h1>
-            <img src={post.link} />
-            <h4>{post.caption}</h4>
-            <p>{post.description}</p>
+      <div style={{textAlign: "center"}}>
+        <Header />
+        <div className="main">
+          <div style={{paddingLeft: 20, paddingRight: 20}} className="post-container">
+            {posts.map(post => (
+              <div className="post" key={post.title}>
+                {post.link && <img src={post.link} />}
+                {post.link && <h3>{post.title}</h3>}
+                {post.link && <h4>{post.caption}</h4>}
+                {post.link && <p>{post.description}</p>}
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     )
   }

@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: white;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.logo {
+  position: fixed;
+  top: 20px;
+  width: 44%;
+  margin: 0 0 0 -22%;
+  left:50%;
+}
+
+.fab {
+  margin: 5px;
+}
+
+.fas {
+  margin: 5px;
+}
+
+.fa:hover {
+    color: red;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.post {
+  width: 400px;
+}
+
+.icon {
+  z-index: 100;
+  cursor: pointer;
+  display: inline;
+}
